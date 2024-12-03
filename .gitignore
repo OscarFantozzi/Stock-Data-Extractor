@@ -1,0 +1,21 @@
+# Ignorar checkpoints do Jupyter
+.ipynb_checkpoints/
+
+# Ignorar ambientes virtuais
+venv/
+
+# Ignorar dados
+data/
+
+# Ignorar logs
+logs/
+
+# Ignorar arquivos temporários do sistema
+*.tmp
+*.log
+*.swp
+*.DS_Store
+
+# Ignorar configurações específicas do ambiente de IDEs
+.idea/
+*.vscode/
