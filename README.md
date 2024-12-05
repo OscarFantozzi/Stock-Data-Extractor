@@ -58,8 +58,8 @@ pip install pandas requests sqlalchemy pyodbc
 #### Steps
 1. Clone this repository:
    ```bash
-   git clone https://github.com/YourUsername/api_stocks.git
-   cd api_stocks
+   git clone https://github.com/YourUsername/Stock-Data-Extractor.git
+   cd Stock-Data-Extractor
    ```
 
 2. Set up your database:
