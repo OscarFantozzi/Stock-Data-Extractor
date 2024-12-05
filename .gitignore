@@ -1,11 +1,8 @@
 # Ignorar checkpoints do Jupyter
-.ipynb_checkpoints/
+.ipynb_checkpoints
 
 # Ignorar ambientes virtuais
 venv/
-
-# Ignorar dados
-data/
 
 # Ignorar logs
 logs/

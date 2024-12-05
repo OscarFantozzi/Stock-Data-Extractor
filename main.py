@@ -4,6 +4,7 @@ import json
 import logging
 from sqlalchemy import create_engine
 from datetime import datetime
+from datetime import timedelta
 
 
 class extractor:
@@ -12,6 +13,18 @@ class extractor:
 
         self.name    = name
         self._id_job = id_job
+
+    def get_last_date(self):
+        
+        conn_string= f'mssql+pyodbc://DESKTOP-U9M4TSR/stock_api_DW?driver=ODBC+Driver+17+for+SQL+Server'
+
+        engine= create_engine( conn_string )
+
+        query = 'SELECT MAX(datetime) FROM stock_data'
+        
+        last_date = pd.read_sql( query , con = engine )
+
+        return last_date
 
     def get_data(self, stock_code, start_date, end_date):
         
@@ -33,6 +46,8 @@ class extractor:
         url = f'https://api.polygon.io/v2/aggs/ticker/{ticker}/range/1/day/{start_date}/{end_date}'
 
         response = r.get(url, headers = headers)
+
+        print(response)
 
         if response.status_code == 200:
 
@@ -67,6 +82,9 @@ class extractor:
         df = pd.DataFrame( data['results'] )
 
         df.columns = columns
+        
+        df['datetime'] = pd.to_datetime( df['Unix Msec timestamp'], unit = 'ms'  )
+
 
         return df
         
@@ -96,8 +114,12 @@ table_name = 'stock_data'
 # instance class
 job1 = extractor('Job #1', '001')
 
+last_date = job1.get_last_date().iloc[0,0] + timedelta(days=1)
+
+print(f'Last date is {last_date}')
+
 # getting data
-df = job1.get_data('AAPL', '2024-09-01','2024-11-29')
+df = job1.get_data('AAPL', '2024-11-01', last_date.strftime('%Y-%m-%d')  )
 
 job1.load_data_sql(df,server,database,table_name)
         
