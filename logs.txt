@@ -1,8 +1,0 @@
-2024-12-04 09:01:41 This message should go to the log file var 170
-2024-12-04 09:01:41 So should this
-2024-12-04 09:01:41 And this, too
-2024-12-04 09:01:41 And non-ASCII stuff, too, like Øresund and Malmö
-2024-12-04 09:01:50 Starting new HTTPS connection (1): www.alphavantage.co:443
-2024-12-04 09:01:50 https://www.alphavantage.co:443 "GET /query?function=TIME_SERIES_INTRADAY&symbol=AAPL&&interval=5min&apikey=PU5AQEKAUQ0NQN91 HTTP/11" 200 None
-2024-12-04 09:12:19 Starting new HTTPS connection (1): www.alphavantage.co:443
-2024-12-04 09:12:20 https://www.alphavantage.co:443 "GET /query?function=TIME_SERIES_INTRADAY&symbol=AAPL&&interval=5min&apikey=PU5AQEKAUQ0NQN91 HTTP/11" 200 None
