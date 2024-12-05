@@ -16,7 +16,7 @@ class extractor:
 
     def get_last_date(self):
         
-        conn_string= f'mssql+pyodbc://{myserver}/stock_api_DW?driver=ODBC+Driver+17+for+SQL+Server'
+        conn_string= f'mssql+pyodbc://{myserver}/{mydatabase}?driver=ODBC+Driver+17+for+SQL+Server'
 
         engine= create_engine( conn_string )
 
