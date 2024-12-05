@@ -4,7 +4,7 @@ import json
 from sqlalchemy import create_engine
 from datetime   import datetime
 from datetime   import timedelta
-from config     import API_KEY, myserver
+from config     import API_KEY, myserver, mydatabase
 
 
 class extractor:
@@ -16,7 +16,7 @@ class extractor:
 
     def get_last_date(self):
         
-        conn_string= f'mssql+pyodbc://DESKTOP-U9M4TSR/stock_api_DW?driver=ODBC+Driver+17+for+SQL+Server'
+        conn_string= f'mssql+pyodbc://{myserver}/stock_api_DW?driver=ODBC+Driver+17+for+SQL+Server'
 
         engine= create_engine( conn_string )
 
