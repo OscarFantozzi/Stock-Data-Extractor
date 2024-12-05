@@ -1,10 +1,10 @@
 import pandas   as pd
 import requests as r
 import json
-import logging
 from sqlalchemy import create_engine
-from datetime import datetime
-from datetime import timedelta
+from datetime   import datetime
+from datetime   import timedelta
+from config     import API_KEY, myserver
 
 
 class extractor:
@@ -32,7 +32,7 @@ class extractor:
 
             raise ValueError('For polygon start_date and end_date must be provided.')
 
-        api_key = 'EVETjm2IfJw2woLluVNJ55Kynkvzw17F'
+        api_key = API_KEY
 
         headers = {'Authorization' : f'Bearer {api_key}' }
 
@@ -105,7 +105,7 @@ class extractor:
 
 # ==================================================================================================================================================================================#
 
-server = 'DESKTOP-U9M4TSR'
+server = myserver
 
 database = 'stock_api'        
         
