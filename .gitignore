@@ -25,3 +25,4 @@ logs.txt
 # Ignorar configurações específicas do ambiente de IDEs
 .idea/
 *.vscode/
+notebooks/config.py
